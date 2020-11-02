@@ -12,26 +12,26 @@ function NavBar() {
 
     return (
         <div>
-            <nav className="teal darken-4">
-                <div class="nav-wrapper container">
-                    <a href="#!" class="brand-logo">PearlTech</a>
-                    <a href="home" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                    <ul class="right hide-on-med-and-down">
-                        <li><a href="sass.html">Home</a></li>
-                        <li><a href="badges.html">About</a></li>
-                        <li><a href="collapsible.html">Javascript</a></li>
-                        <li><a href="mobile.html">Contact</a></li>
-                    </ul>
-                </div>
-            </nav>
-
-            <ul class="sidenav" id="mobile-demo">
-                <li><a href="sass.html">Home</a></li>
-                <li><a href="badges.html">About</a></li>
-                <li><a href="collapsible.html">Javascript</a></li>
-                <li><a href="mobile.html">Contact</a></li>
+            <div className="navbar-fixed">
+                <nav className="teal darken-4">
+                    <div class="nav-wrapper container">
+                        <a href="#!" class="brand-logo">PearlTech</a>
+                        <a href="home" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                        <ul class="right hide-on-med-and-down">
+                            <li><a href="sass.html">Home</a></li>
+                            <li><a href="badges.html">About</a></li>
+                            <li><a href="collapsible.html">Javascript</a></li>
+                            <li><a href="mobile.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <ul class="sidenav teal darken-4" id="mobile-demo">
+                <li><a href="sass.html" className="white-text">Home</a></li>
+                <li><a href="badges.html" className="white-text">About</a></li>
+                <li><a href="collapsible.html" className="white-text">Javascript</a></li>
+                <li><a href="mobile.html" className="white-text">Contact</a></li>
             </ul>
-
         </div>
     )
 }
