@@ -1,6 +1,7 @@
 import React from 'react'
 import Navigation from '../Navbar/Navigation.js';
-import HeroSection from '../HeroSection/HeroSection'
+import HeroSection from '../HeroSection/HeroSection';
+import Feature from './../Feature/Feature';
 
 
 const Landing =()=> {
@@ -26,6 +27,10 @@ const Landing =()=> {
                     </p>
                     <img src="/team.png" alt="team" />
                </div>
+            </div>
+            <div>
+                <h4 className="center-align">Our Awesome Feature</h4>
+                <Feature />
             </div>
         </div>
     )
