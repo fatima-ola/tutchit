@@ -9,7 +9,7 @@ const Navigation =() =>{
            
             <Navbar 
             alignLinks="right"
-            brand={<a className="brand-logo" href="/">Logo</a>}
+            brand={<a className="brand-logo black-text" href="/">TutChit</a>}
             id="mobile-nav"
             menuIcon={<Icon>menu</Icon>}
             options={{
@@ -23,23 +23,24 @@ const Navigation =() =>{
               outDuration: 200,
               preventScrolling: true
             }}
+            className="white z-depth-0"
             >
-            <NavLink to="/">
+            <NavLink to="/" className="black-text">
                 Home
             </NavLink>
-            <a href="#about">
+            <a href="#about" className="black-text">
                 About
             </a>
-            <a href="#feature">
+            <a href="#feature" className="black-text">
                 Feature
             </a>
-            <a href="testimonial">
+            <a href="testimonial" className="black-text">
                 Testimonial
             </a>
-            <NavLink to="/login">
+            <NavLink to="/login" className="black-text">
                 Login
             </NavLink>
-            <NavLink to="/signup">
+            <NavLink to="/signup" className="black-text">
                 Signup
             </NavLink>
             </Navbar>
