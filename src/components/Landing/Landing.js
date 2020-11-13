@@ -2,6 +2,7 @@ import React from 'react'
 import Navigation from '../Navbar/Navigation.js';
 import HeroSection from '../HeroSection/HeroSection';
 import Feature from './../Feature/Feature';
+import Testimonial from './../Testimonial/Testimonial';
 
 
 const Landing =()=> {
@@ -31,6 +32,10 @@ const Landing =()=> {
             <div>
                 <h4 className="center-align">Our Awesome Feature</h4>
                 <Feature />
+            </div>
+            <div>
+                <h4 className="center-align">Testimonials</h4>
+                <Testimonial />
             </div>
         </div>
     )
