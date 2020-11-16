@@ -31,3 +31,8 @@
   width: 90%;
   margin: 0 auto;
 }
+
+.page-footer {
+  background-color: #3d155f !important;
+  color: #ffffff !important;
+}
