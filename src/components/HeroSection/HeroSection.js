@@ -6,9 +6,9 @@ const HeroSection =()=> {
         <div className="banner">
            <div className="banner-left">
                <h2 className="white-text">Become a Fullstack Developer with TutChit</h2>
-               <ButtonSection>
-                   Get Started
-               </ButtonSection>
+               <ButtonSection text="Get Started"/>
+                   
+               
             </div> 
         </div>
     )

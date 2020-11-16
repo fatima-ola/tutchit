@@ -36,3 +36,30 @@
   background-color: #3d155f !important;
   color: #ffffff !important;
 }
+
+.container {
+  padding-top: 80px;
+}
+
+.signup {
+  width: 40%;
+  margin: 50px auto;
+  padding: 60px;
+  box-shadow: 0 0 4px 2px rgba(38, 153, 251, 0.18);
+}
+
+.signup-title {
+  display: block;
+  text-align: center;
+  font-size: 40px;
+}
+
+input {
+  width: 100%;
+  padding: 10px 12px;
+}
+
+.buttonSignup {
+  width: 100%;
+  margin-bottom: 10px;
+}

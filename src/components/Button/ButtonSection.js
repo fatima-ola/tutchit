@@ -1,14 +1,17 @@
 import React from 'react'
 import {Button} from 'react-materialize'
 
-const ButtonSection =({children})=> {
+const ButtonSection =(props)=> {
+    const {text, handleClick, className} = props
     return (
         <div>
             <Button
                 node="button"
                 waves="light"
+                onClick={handleClick}
+                className={className}
             >
-               {children}
+               {text}
             </Button>
         </div>
     )

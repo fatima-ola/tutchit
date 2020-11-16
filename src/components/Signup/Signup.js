@@ -5,14 +5,15 @@ import {NavLink} from 'react-router-dom';
 
 const Signup =()=> {
     return (
-        <div>
+        <div className="container">
             <form>
-                <div>
-                    <NavLink to="/">TutChit</NavLink>
+                <div className="signup">
+                    <NavLink to="/" className="signup-title">TutChit</NavLink>
                     <TextInputSection placeholder="Enter Your Full Name" type="text" label="Full Name"/>
                     <TextInputSection placeholder="Enter Email Address" type="email" label="Email Address"/>
-                    <TextInputSection  placeholder="Placeholder" type="password" label="Password"/>
-                    <ButtonSection>Signup</ButtonSection>
+                    <TextInputSection  placeholder="Enter Your Password" type="password" label="Password"/>
+                    <ButtonSection text="Signup" className="buttonSignup blue"/>
+                    <p className="center-align">Already have an account? <a href="/login">Signin</a></p>
                 </div>
             </form>
         </div>

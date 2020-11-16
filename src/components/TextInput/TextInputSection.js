@@ -1,12 +1,14 @@
 import React from 'react'
 import {TextInput} from 'react-materialize';
 
-const TextInputSection =()=> {
+const TextInputSection =(props)=> {
+    const {placeholder, type, label} = props;
     return (
         <div>
-            <label>First Name</label>
-            <TextInput placeholder="Enter Your First Name"
-                type="text"
+            <label>{label}</label>
+            <TextInput placeholder={placeholder}
+                type={type}
+                inputClassName="browser-default"
                 />
         </div>
     )
