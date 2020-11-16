@@ -8,7 +8,7 @@ const Signup =()=> {
         <div className="container">
             <form>
                 <div className="signup">
-                    <NavLink to="/" className="signup-title">TutChit</NavLink>
+                    <NavLink to="/" className="signin-title">TutChit</NavLink>
                     <TextInputSection placeholder="Enter Your Full Name" type="text" label="Full Name"/>
                     <TextInputSection placeholder="Enter Email Address" type="email" label="Email Address"/>
                     <TextInputSection  placeholder="Enter Your Password" type="password" label="Password"/>

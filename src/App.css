@@ -41,14 +41,16 @@
   padding-top: 80px;
 }
 
-.signup {
+.signup,
+.signin {
   width: 40%;
   margin: 50px auto;
   padding: 60px;
   box-shadow: 0 0 4px 2px rgba(38, 153, 251, 0.18);
 }
 
-.signup-title {
+.signup-title,
+.signin-title {
   display: block;
   text-align: center;
   font-size: 40px;
@@ -59,7 +61,8 @@ input {
   padding: 10px 12px;
 }
 
-.buttonSignup {
+.buttonSignup,
+.buttonLogin {
   width: 100%;
   margin-bottom: 10px;
 }

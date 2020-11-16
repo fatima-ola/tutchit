@@ -6,7 +6,7 @@ const HeroSection =()=> {
         <div className="banner">
            <div className="banner-left">
                <h2 className="white-text">Become a Fullstack Developer with TutChit</h2>
-               <ButtonSection text="Get Started"/>
+               <ButtonSection text="Get Started" className="red"/>
                    
                
             </div> 

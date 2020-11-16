@@ -37,7 +37,7 @@ const Navigation =() =>{
             <a href="testimonial" className="black-text">
                 Testimonial
             </a>
-            <NavLink to="/signin" className="black-text">
+            <NavLink to="/login" className="black-text">
                 Login
             </NavLink>
             <NavLink to="/signup" className="black-text">
