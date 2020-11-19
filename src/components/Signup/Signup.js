@@ -1,9 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import TextInputSection from '../TextInput/TextInputSection';
 import ButtonSection from '../Button/ButtonSection';
 import {NavLink} from 'react-router-dom';
+import {auth, firestore} from '../../config/firebase';
 
 const Signup =()=> {
+    const [fullname, setFullname] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [errorEmail, setErrorEmail] = useState('');
+    const [errorPassword, setErrorPassword] = useState('');
     return (
         <div className="container">
             <form>

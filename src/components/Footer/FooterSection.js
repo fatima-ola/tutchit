@@ -1,6 +1,7 @@
 import React from 'react';
 import {Footer} from "react-materialize";
-import {a} from 'react-router-dom'
+import SocialMedia from '../SocialMedia/SocialMedia';
+
 
 const FooterSection =()=> {
     return (
@@ -29,7 +30,7 @@ const FooterSection =()=> {
                 </a>
             </li>
             </ul>}
-        moreLinks={<a className="grey-text text-lighten-4 right" href="#!">More Links</a>}
+        moreLinks={<a className="grey-text text-lighten-4 right" href="#!"><SocialMedia /></a>}
         >
         <h5 className="white-text">
             Footer Content
