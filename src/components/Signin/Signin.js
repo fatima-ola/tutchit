@@ -1,17 +1,53 @@
-import React from 'react';
+import React, {useState} from 'react';
 import TextInputSection from '../TextInput/TextInputSection';
 import ButtonSection from '../Button/ButtonSection';
 import {NavLink} from 'react-router-dom';
+import {auth} from '../../config/firebase'
 
 
 const Signin =()=> {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [errorEmail, setErrorEmail] = useState('');
+    const [errorMessage, setErrorMessage] = useState('')
+
+const handleChange = (e) => {
+    const {name, value} = e.currentTarget;
+    if(name === "email"){
+        setEmail(value);
+    }else if(name === "password"){
+        setPassword(value);
+    }
+}
+
+const handleSubmit = async (e) => {
+    e.prevendDefault();
+
+    try {
+        const {user }= await auth().signInWithEmailAndPassword(email, password);
+        console.log(user);
+       
+    } catch (error) {
+        if(error.code === 'auth/user-not-found'){
+            setErrorMessage('Invalid email address or password');
+        }else if(error.code === 'auth/invalid-email'){
+            setErrorMessage('error.message')
+        }else if(error.code === 'auth/wrong-password'){
+            setErrorMessage('invalid email address or password')
+        }
+        
+    }
+
+}
+
     return (
         <div className="container">
-        <form>
+        <form onSubmit={handleSubmit}>
             <div className="signup">
                 <NavLink to="/" className="signup-title">TutChit</NavLink>
-                <TextInputSection placeholder="Enter Email Address" type="email" label="Email Address"/>
-                <TextInputSection  placeholder="Enter Your Password" type="password" label="Password"/>
+                {errorMessage? <p className="center-align red-text" >{errorMessage}</p> : ''}
+                <TextInputSection placeholder="Enter Email Address" type="email" label="Email Address" name="email" value={email} handleChange={handleChange} error={errorEmail} />
+                <TextInputSection  placeholder="Enter Your Password" type="password" label="Password" name="password" value={password} handleChange={handleChange} />
                 <ButtonSection text="Login" className="buttonLogin blue"/>
                 <p className="center-align">Don't have an account? <a href="/signup">Sign up</a></p>
             </div>
