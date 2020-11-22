@@ -2,7 +2,7 @@ import React from 'react'
 import {TextInput} from 'react-materialize';
 
 const TextInputSection =(props)=> {
-    const {placeholder, type, label, handleChange, name, value} = props;
+    const {placeholder, type, label, handleChange, name, value, handleKeyUp} = props;
     return (
         <div>
             <label>{label}</label>
@@ -12,7 +12,8 @@ const TextInputSection =(props)=> {
                 name={name}
                 value={value}
                 onChange={handleChange}
-                />
+                onKeyUp={handleKeyUp}
+            />
         </div>
     )
 }
