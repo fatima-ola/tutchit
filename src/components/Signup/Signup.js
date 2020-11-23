@@ -8,8 +8,8 @@ const Signup =()=> {
     const [fullname, setFullname] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [errorEmail, setErrorEmail] = useState('');
-    const [errorPassword, setErrorPassword] = useState('');
+    const [errorEmail, setErrorEmail] = useState(null);
+    const [errorPassword, setErrorPassword] = useState(null);
     const [errorMessage, setErrorMessage] = useState('');
     
 
@@ -41,7 +41,14 @@ const Signup =()=> {
                 })
             }    
        } catch (error) {
-        setErrorMessage(error.message);
+        // setErrorMessage(error.message);
+        if(error.code === 'auth/weak-password'){
+            setErrorPassword(error.message)
+        }else if(error.code === 'auth/email-already-in-use'){
+            setErrorEmail(error.message)
+        }else if(error.code === 'auth/invalid-email'){
+            setErrorEmail(error.message)
+        }
        }
     }
 
@@ -56,10 +63,10 @@ const Signup =()=> {
                     <NavLink to="/" className="signin-title">TutChit</NavLink>
                         {errorMessage? <p className="center-align red-text" >{errorMessage}</p> : ''}
                     <TextInputSection placeholder="Enter Your Full Name" type="text" label="Full Name" value={fullname} name="fullname" handleChange={handleChange} handleKeyUp={handleKeyUp} />
-                    <TextInputSection placeholder="Enter Email Address" type="email" label="Email Address" value={email} name="email" handleChange={handleChange} handleKeyUp={handleKeyUp} />
-                    <TextInputSection  placeholder="Enter Your Password" type="password" label="Password" value={password} name="password" handleChange={handleChange} handleKeyUp={handleKeyUp} />
+                    <TextInputSection placeholder="Enter Email Address" type="email" label="Email Address" value={email} name="email" handleChange={handleChange} handleKeyUp={handleKeyUp} error={errorEmail}/>
+                    <TextInputSection  placeholder="Enter Your Password" type="password" label="Password" value={password} name="password" handleChange={handleChange} handleKeyUp={handleKeyUp} error={errorPassword}/>
                     <ButtonSection text="Signup" className="buttonSignup blue"/>
-                    <p className="center-align">Already have an account? <a href="/login">Signin</a></p>
+                    <p className="center-align">Already have an account? <a href="/login">Login</a></p>
                 </div>
             </form>
         </div>
