@@ -50,7 +50,6 @@ const handleKeyUp = () => {
     
 }
 
-
     return (
         <div className="container">
         <form onSubmit={handleSubmit}>
@@ -60,7 +59,6 @@ const handleKeyUp = () => {
                 <TextInputSection placeholder="Enter Email Address" type="email" label="Email Address" name="email" value={email} handleChange={handleChange} error={errorEmail} handleKeyUp={handleKeyUp}/>
                 <TextInputSection  placeholder="Enter Your Password" type="password" label="Password" name="password" value={password} handleChange={handleChange} handleKeyUp={handleKeyUp}   />
                 <ButtonSection text="Login" className="buttonLogin blue"/>
-                <ButtonSection text="Sign in with Google" className="buttonLogin red" handleGoogle={handleGoogle}/>
                 <p className="center-align">Don't have an account? <a href="/signup">Sign up</a></p>
             </div>
         </form>
