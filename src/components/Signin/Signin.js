@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import TextInputSection from '../TextInput/TextInputSection';
 import ButtonSection from '../Button/ButtonSection';
-import {NavLink} from 'react-router-dom';
+import {NavLink, useHistory} from 'react-router-dom';
 import {auth} from '../../config/firebase'
 
 
@@ -9,7 +9,8 @@ const Signin =()=> {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errorEmail, setErrorEmail] = useState('');
-    const [errorMessage, setErrorMessage] = useState('')
+    const [errorMessage, setErrorMessage] = useState('');
+    const history = useHistory();
 
 const handleChange = (e) => {
     const {name, value} = e.currentTarget;
@@ -29,7 +30,8 @@ const handleSubmit = async (e) => {
            return setErrorMessage('All Fields are Required');
          }
         const {user} = await auth.signInWithEmailAndPassword(email, password);
-        console.log(user);
+        localStorage.setItem('uid', user.uid);
+        history.push('/dashboard');
        
     } catch (error) {
         if(error.code === 'auth/user-not-found'){

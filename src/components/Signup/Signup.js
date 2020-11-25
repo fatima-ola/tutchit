@@ -3,7 +3,9 @@ import TextInputSection from '../TextInput/TextInputSection';
 import ButtonSection from '../Button/ButtonSection';
 import {NavLink, useHistory} from 'react-router-dom';
 import {auth, firestore} from '../../config/firebase';
+
 // import {auth, firestore, provider} from '../../config/firebase';
+ 
 
 const Signup =()=> {
     const [fullname, setFullname] = useState('');
@@ -42,7 +44,7 @@ const Signup =()=> {
                   email  
                 })
                 localStorage.setItem('uid', user.uid);
-                history.push("/dashboard");
+                history.push("/signin");
             }    
        } catch (error) {
         // setErrorMessage(error.message);
