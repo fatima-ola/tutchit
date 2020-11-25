@@ -2,7 +2,8 @@ import React, {useState} from 'react';
 import TextInputSection from '../TextInput/TextInputSection';
 import ButtonSection from '../Button/ButtonSection';
 import {NavLink, useHistory} from 'react-router-dom';
-import {auth, firestore, provider} from '../../config/firebase';
+import {auth, firestore} from '../../config/firebase';
+// import {auth, firestore, provider} from '../../config/firebase';
 
 const Signup =()=> {
     const [fullname, setFullname] = useState('');
@@ -31,7 +32,7 @@ const Signup =()=> {
     
        try {
            if(!fullname || !email || !password){
-            setErrorMessage('All Fields are Required');
+          return setErrorMessage('All Fields are Required');
            }
            const {user} = await auth.createUserWithEmailAndPassword(email, password)
            if(user){
@@ -86,8 +87,8 @@ const Signup =()=> {
                     <TextInputSection placeholder="Enter Your Full Name" type="text" label="Full Name" value={fullname} name="fullname" handleChange={handleChange} handleKeyUp={handleKeyUp} />
                     <TextInputSection placeholder="Enter Email Address" type="email" label="Email Address" value={email} name="email" handleChange={handleChange} handleKeyUp={handleKeyUp} error={errorEmail}/>
                     <TextInputSection  placeholder="Enter Your Password" type="password" label="Password" value={password} name="password" handleChange={handleChange} handleKeyUp={handleKeyUp} error={errorPassword}/>
-                    <ButtonSection text="Signup" className="buttonSignup blue"/>
-                    {/* <ButtonSection text="Sign up with Google" className="buttonLogin red" handleGoogle={handleGoogle}/> */}
+                    <ButtonSection text="Signup" className="buttonSignup blue" />
+                    {/* <ButtonSection text="Sign up with Google" className="buttonLogin red" onClick={handleGoogle}/> */}
                     <p className="center-align">Already have an account? <a href="/login">Login</a></p>
                 </div>
             </form>
