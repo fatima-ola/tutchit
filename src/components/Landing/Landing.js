@@ -13,7 +13,7 @@ const Landing =()=> {
             <HeroSection/>
             <div className="who-we-are" id="about">
                 <h4 className="center-align">Who we are</h4>
-               <div className="who-we-are-section">
+               <div className="who-we-are-section" width="100%">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa velit repudiandae blanditiis fuga, eum adipisci earum 
                         numquam veritatis, reiciendis vel autem recusandae molestias deleniti dicta. Dolore totam fugit inventore laborum.
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa velit repudiandae blanditiis fuga, eum adipisci earum 
@@ -27,7 +27,7 @@ const Landing =()=> {
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa velit repudiandae blanditiis fuga, eum adipisci earum 
                         numquam veritatis, reiciendis vel autem recusandae molestias deleniti dicta. Dolore totam fugit inventore laborum.
                     </p>
-                    <img src="/team.png" alt="team" />
+                    <img src="/team.png" alt="team" width="100%"/>
                </div>
             </div>
             <div id="feature">

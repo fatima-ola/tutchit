@@ -1,14 +1,40 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import './App.css';
 import Landing from './components/Landing/Landing';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import Signup from './components/Signup/Signup';
 import Signin from './components/Signin/Signin';
 import Dashboard from './components/Dashboard/Home/Home';
+import {auth, firestore} from './config/firebase';
 
-function App() {
+const App = () => {
+  const [user, setUser] = useState('');
+
+
+useEffect(()=>{
+  auth.onAuthStateChanged( async (userData)=> {
+      if (userData) {
+        const profile = await firestore.collection('users').doc(userData.uid).get();
+        if(profile.exists){
+          setUser(profile.data().fullname);
+        }
+      }else{
+       setUser('');
+      }
+  });
+})
+
+
+
+const handleLogout = ()=>{
+  auth.signOut();
+  localStorage.removeItem('uid');
+      
+}
+
+
   return (
-  
+
       <BrowserRouter>
         <Switch>
           <Route exact path="/">
@@ -17,17 +43,17 @@ function App() {
           <Route path="/signup">
             <Signup />
           </Route>
-          <Route path="/login">
+          <Route path="/signin">
             <Signin />
           </Route>
           <Route path="/dashboard">
-            <Dashboard />
+            <Dashboard  handleLogout={handleLogout} displayName={user}/>
           </Route>
         </Switch>
       </BrowserRouter>
   
   );
-}
 
+}
 export default App;
 

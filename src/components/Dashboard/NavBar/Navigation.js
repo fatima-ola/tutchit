@@ -3,7 +3,8 @@ import 'materialize-css';
 import { Navbar, Icon} from 'react-materialize';
 import {NavLink} from 'react-router-dom'
 
-const Navigation =() =>{
+const Navigation =(props) =>{
+    const {handleLogout, displayName} = props
     return (
         <div>
            
@@ -26,9 +27,9 @@ const Navigation =() =>{
             className="white z-depth-0"
             >
             <NavLink to="/" className="black-text">
-                Welcome
+                Welcome {displayName}
             </NavLink>
-            <NavLink to="/" className="black-text">
+            <NavLink onClick={handleLogout} to="/" className="black-text">
                 Logout
             </NavLink>
             </Navbar>
