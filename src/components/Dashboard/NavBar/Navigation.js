@@ -26,7 +26,7 @@ const Navigation =(props) =>{
             }}
             className="white z-depth-0"
             >
-            <NavLink to="/" className="black-text">
+            <NavLink to="/" className="black-text" style={{backgroundColor: "transparent"}}>
                 Welcome {displayName}
             </NavLink>
             <NavLink onClick={handleLogout} to="/" className="black-text">
