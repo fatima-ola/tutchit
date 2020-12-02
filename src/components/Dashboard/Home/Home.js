@@ -43,6 +43,7 @@ const Home = (props) => {
                 <TextInputSection type="text" name="productName" label="Product Name" value={productName} handleChange={handleChange} placeholder="Enter Product Name"/>
                 <TextInputSection type="text" name="productValue" label="Product Value" value={productValue} handleChange={handleChange} placeholder="Enter Product Value"/>
                 <ButtonSection text="Add" className="buttonLogin blue" />
+                <ButtonSection text="Delete" className="buttonLogin red" />
             </form>
         </div>
     )

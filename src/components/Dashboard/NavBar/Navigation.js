@@ -29,6 +29,9 @@ const Navigation =(props) =>{
             <NavLink to="/" className="black-text" style={{backgroundColor: "transparent"}}>
                 Welcome {displayName}
             </NavLink>
+            <NavLink to="/profile" className="black-text" style={{backgroundColor: "transparent"}}>
+               Profile
+            </NavLink>
             <NavLink onClick={handleLogout} to="/" className="black-text">
                 Logout
             </NavLink>

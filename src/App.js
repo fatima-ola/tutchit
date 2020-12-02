@@ -5,7 +5,9 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import Signup from './components/Signup/Signup';
 import Signin from './components/Signin/Signin';
 import Dashboard from './components/Dashboard/Home/Home';
+import Profile from './components/Dashboard/Profile/Profile';
 import {auth, firestore} from './config/firebase';
+
 
 const App = () => {
   const [user, setUser] = useState('');
@@ -13,16 +15,16 @@ const App = () => {
 
 useEffect(()=>{
   auth.onAuthStateChanged( async (userData)=> {
-      if (userData) {
-        const profile = await firestore.collection('users').doc(userData.uid).get();
-        if(profile.exists){
-          setUser(profile.data().fullname);
-        }
-      }else{
-       setUser('');
+    if (userData) {
+      const profile = await firestore.collection('users').doc(userData.uid).get();
+      if(profile.exists){
+        setUser(profile.data().fullname);
       }
-  });
-})
+    }else{
+     setUser('');
+    }
+});
+},  [])
 
 
 
@@ -48,6 +50,9 @@ const handleLogout = ()=>{
           </Route>
           <Route path="/dashboard">
             <Dashboard  handleLogout={handleLogout} displayName={user}/>
+          </Route>
+          <Route path="/profile">
+            <Profile />
           </Route>
         </Switch>
       </BrowserRouter>
