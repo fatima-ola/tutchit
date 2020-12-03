@@ -29,6 +29,9 @@ const Navigation =(props) =>{
             <NavLink to="/" className="black-text" style={{backgroundColor: "transparent"}}>
                 Welcome {displayName}
             </NavLink>
+            <NavLink to="/products" className="black-text" style={{backgroundColor: "transparent"}}>
+               Products
+            </NavLink>
             <NavLink to="/profile" className="black-text" style={{backgroundColor: "transparent"}}>
                Profile
             </NavLink>

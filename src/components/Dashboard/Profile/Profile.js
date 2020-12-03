@@ -3,12 +3,14 @@ import Navigation from '../NavBar/Navigation';
 import TextInputSection from '../../TextInput/TextInputSection';
 import ButtonSection from '../../Button/ButtonSection';
 import { firestore} from '../../../config/firebase';
+import { useHistory } from 'react-router-dom';
 
 
 const Profile = ()=> {
     const [fullname, setFullname] = useState('');
     const [email, setEmail] =useState('');
     const [phone, setPhone] = useState('');
+    const history = useHistory();
 
     const uid = localStorage.getItem('uid');
 
@@ -22,6 +24,12 @@ const Profile = ()=> {
             setPhone(value);
         }
     }
+
+    useEffect(()=>{
+        if(!uid){
+            history.push('/')
+        }
+    }, []);
 
     useEffect(() => {
         const fetchedData = async () => {
