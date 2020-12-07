@@ -3,7 +3,7 @@ import {CardPanel} from 'react-materialize'
 
 const CardSection = ({children})=> {
     return (
-        <CardPanel className="z-depth-1 hoverable">
+        <CardPanel className="z-depth-1 hoverable waves-effect waves-orange">
             <span className="white-text">
                 {children}
             </span>

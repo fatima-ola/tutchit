@@ -6,7 +6,9 @@ import Signup from './components/Signup/Signup';
 import Signin from './components/Signin/Signin';
 import Dashboard from './components/Dashboard/Home/Home';
 import Profile from './components/Dashboard/Profile/Profile';
+import Products from './components/Dashboard/Products/Products';
 import {auth, firestore} from './config/firebase';
+
 
 
 const App = () => {
@@ -53,6 +55,9 @@ const handleLogout = ()=>{
           </Route>
           <Route path="/profile">
             <Profile />
+          </Route>
+          <Route path="/products">
+            <Products displayName={user}/>
           </Route>
         </Switch>
       </BrowserRouter>

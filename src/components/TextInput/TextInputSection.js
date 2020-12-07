@@ -6,7 +6,8 @@ const TextInputSection =(props)=> {
     return (
         <div>
             <label>{label}</label>
-            <TextInput placeholder={placeholder}
+            <TextInput 
+                placeholder={placeholder}
                 type={type}
                 inputClassName="browser-default"
                 name={name}
