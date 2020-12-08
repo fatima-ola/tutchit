@@ -16,21 +16,36 @@ const Products =({displayName})=> {
             const listProducts = [];
             if(products){
                 products.forEach((product)=>{
-                    const userProduct = {
-                        id: product.id,
-                        productName: product.data().productName,
-                        productValue: product.data().productValue,
-                        uid: product.data().uid
+                    if(uid === product.data().uid){
+                        const userProduct = {
+                            id: product.id,
+                            productName: product.data().productName,
+                            productValue: product.data().productValue,
+                            uid: product.data().uid
+                        }
+                        listProducts.push(userProduct);
                     }
-                    listProducts.push(userProduct);
+                    
                 })
                 setUserProducts(listProducts);
             }
         }
        getProduct()
-    }, []);
+    }, [userProducts,uid]);
 
-    console.log(userProducts);
+    const handleDelete = async (id) => {
+        try {
+            const getProduct = await firestore.collection('products').get()
+            getProduct.forEach((product)=>{
+                if(product.id === id){
+                firestore.collection('products').doc(id).delete();
+                }
+            })
+           
+        } catch (error) {
+            
+        }
+    }
 
     return (
         <div>
@@ -48,7 +63,7 @@ const Products =({displayName})=> {
                                 title={product.productName}
                                 >
                                {product.productValue} <br />
-                               <ButtonSection text="Delete"/>   
+                               <ButtonSection text="Delete" handleClick={() => handleDelete(product.id)}/>   
                                 </Card>
                             </Col>
 
